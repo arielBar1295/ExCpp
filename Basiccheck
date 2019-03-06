@@ -55,7 +55,7 @@ else
 fi
 
 #convert the result to binary and exit the final answer.
-(( answer=(( $successMake*4))+(( $successVal*2))+(( $successHal*0)))) 
+(( answer=(( $successMake*4))+(( $successVal*2))+(( $successHal*1)))) 
 echo "compilation,"   "Memory leaks,"  "Thread race"
 echo   "   "$make "           " $val"        "$hal
 echo "final exit :"$answer
