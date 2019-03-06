@@ -15,7 +15,7 @@ else
    successMake=0  
 fi
 #check memory leak
-valgrind --leak-check=full --error-exitcode=1 ./$exeName $arguments
+valgrind --leak-check=full --error-exitcode=1 ./$exeName $arguments &>/dev/null
 successVal=$? # a variable for checking if there is no memory leak.
 if [ $successVal -eq 0 ]
 then
@@ -26,7 +26,7 @@ else
 
 fi
 #check thread race.
-valgrind --tool=helgrind  ./$exeName $arguments
+valgrind --tool=helgrind  ./$exeName $arguments &>/dev/null
 successHal=$? # a variable for checking the threads.
 if [ $successHal -eq 0 ]
 then
