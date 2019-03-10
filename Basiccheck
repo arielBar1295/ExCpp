@@ -1,5 +1,5 @@
 #!/bin/bash
-#save the folder name and 
+#save the folder name and path
 FolderName=$1
 exeName=$2
 shift 2
