@@ -8,11 +8,10 @@ cd
 cd $FolderName #enter into the folder.
 make >/dev/null 2>&1 #check if there is makefile.
 successMake=$? #a variable for checking if make command worked.
-if [ $successMake -gt 0 ]
- then  echo "there is no makefile ,all failed"
-   exit 7
+if [ $successMake -eq 0 ]
+ then successMake=0  
 else
-   successMake=0  
+   exit 7
 fi
 #check memory leak
 valgrind --leak-check=full --error-exitcode=1 ./$exeName $arguments &>/dev/null
