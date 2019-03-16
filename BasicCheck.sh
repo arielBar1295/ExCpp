@@ -6,7 +6,7 @@ shift 2
 arguments=$@ #if there are some arguments ,save them.
 cd
 cd $FolderName #enter into the folder.
-make #check if there is makefile.
+make --error-exitcode=1 #check if there is makefile.
 successMake=$? #a variable for checking if make command worked.
 if [ $successMake -gt 0 ]
  then  echo "there is no makefile ,all failed"
