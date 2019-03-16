@@ -4,7 +4,7 @@ FolderName=$1
 exeName=$2
 shift 2
 arguments=$@ #if there are some arguments ,save them.
-cd
+cd-
 cd $FolderName #enter into the folder.
 make >/dev/null 2>&1 #check if there is makefile.
 successMake=$? #a variable for checking if make command worked.
@@ -12,6 +12,7 @@ if [ $successMake -eq 0 ]
  then successMake=0  
 else
   echo "no makefike or compilation wrong"
+     exit 7
 fi
 #check memory leak
 valgrind --leak-check=full --error-exitcode=1 ./$exeName $arguments &>/dev/null
