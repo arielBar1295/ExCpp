@@ -11,7 +11,7 @@ successMake=$? #a variable for checking if make command worked.
 if [ $successMake -eq 0 ]
  then successMake=0  
 else
-   exit 7
+  echo "no makefike or compilation wrong"
 fi
 #check memory leak
 valgrind --leak-check=full --error-exitcode=1 ./$exeName $arguments &>/dev/null
